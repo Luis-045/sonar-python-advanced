@@ -1,0 +1,40 @@
+[MASTER]
+# Evita que Pylint analice los archivos de pruebas o de configuración
+ignore=tests,venv,__pycache__
+extension-pkg-whitelist=
+
+[MESSAGES CONTROL]
+# Desactiva solo las advertencias menores o irrelevantes para la práctica
+disable=
+    too-few-public-methods,
+    missing-class-docstring,
+    invalid-name,
+    line-too-long
+
+# Habilita las advertencias que SonarQube puede aprovechar
+enable=
+    missing-module-docstring,
+    missing-function-docstring,
+    unnecessary-pass,
+    unused-variable,
+    redefined-outer-name,
+    bare-except,
+    broad-except,
+    duplicate-code
+
+[FORMAT]
+# Longitud máxima razonable de línea
+max-line-length=100
+
+[BASIC]
+# Convenciones para nombres (solo advertencia, no error grave)
+variable-rgx=[a-z_][a-z0-9_]{0,30}$
+function-rgx=[a-z_][a-z0-9_]{0,30}$
+argument-rgx=[a-z_][a-z0-9_]{0,30}$
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+[REPORTS]
+# No mostrar el reporte completo de puntuación, solo las advertencias
+score=yes
+output-format=text
